@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Preguntas</title>
+    </head>
+    <body onload="comenzarReloj()">
+        <h1>Responde las preguntas antes de <span id="cuentaRegresiva"></span> segundos </h1>
+
+        ¿Qué dia es hoy?
+        <input type="text" id="pregunta1"> <br><br>
+        ¿Qué mes es hoy?
+        <input type="text" id="pregunta2"> <br><br>
+        ¿Qué año es?
+        <input type="text" id="pregunta3"> <br><br>
+        ¿Cuantos meses tiene el año?
+        <input type="text" id="pregunta4"> <br><br>
+        ¿Cuantos dias tiene la semana?
+        <input type="text" id="pregunta5"> <br><br>
+
+        <button onclick="termine()">Terminar</button>
+        <button onclick="intentarDeNuevo()">Reiniciar</button>
+
+        <script>
+            let tiempoTerminado;
+            let intervaloTiempo;
+            function comenzarReloj(){
+                tiempoTerminado = setTimeout(tiempoCumplido, 1000 * 30);
+                intervaloTiempo = setInterval(ticTac, 1000);
+
+                document.getElementById("cuentaRegresiva").textContent=  30;
+            }
+
+            function ticTac(){
+                let tiempo = document.getElementById("cuentaRegresiva").textConten;
+                document.getElementById("cuentaRegresiva").textContent = tiempo -1;
+            }
+
+            function tiempoCumplido(){
+                clearInterval(intervaloTiempo);
+                document.getElementById("cuentaRegresiva").textContent = 0;
+                alert("GAME OVER: INTENTA DE NUEVO.")
+            }
+            function termine(){
+                clearTimeout(tiempoTerminado);
+                clearInterval(intervaloTiempo);
+
+                let fecha = new Date();
+                let respuesta1 = document.getElementById("pregunta1").value;
+                let respuesta2 = document.getElementById("pregunta2").value;
+                let respuesta3 = document.getElementById("pregunta3").value;
+                let respuesta4 = document.getElementById("pregunta4").value;
+                let respuesta5 = document.getElementById("pregunta5").value;
+
+                let mensaje = fecha.toLocaleDateString("es-Es") + "\n" + 
+                "1. " + respuesta1 + "\n" + 
+                "2. " + respuesta2 + "\n" + 
+                "3. " + respuesta3 + "\n" + 
+                "4. " + respuesta4 + "\n" + 
+                "5. " + respuesta5  
+            }
+
+            function intentarDeNuevo(){
+                location.reload()
+            }
+            
+        </script>
+        
+        
+        
+
+
+    </body>
+</html>

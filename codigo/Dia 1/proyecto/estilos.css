@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(178, 153, 120);
+}
+
+.espacio{
+    float:left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+p{
+    text-align:justify;
+}
+
+span{
+    color: rgb(9, 9, 9);
+    font-weight: bold;
+}
+
+span:hover{
+    color: rgb(177, 23, 23);
+}

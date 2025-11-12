@@ -1,0 +1,14 @@
+p{
+    text-align: center;
+}
+
+
+.normal{
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.destacado{
+    background-color: burlywood;
+    padding: 20px;
+    font-family:monospace ;
+}

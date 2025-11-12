@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <head>
+        <title>temporizador</title>
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+    <body onload="comenzarReloj()">
+        <input type="number" id="tiempoElegido">
+
+        <button onclick="comenzarTiempo()">Alarma</button>
+        <h1  id="textoalarma">00:00:00</h1>
+        <h1 id="fechas">0/0/0</h1>
+
+        <audio id="audioAlarma">
+            <source src="alarma.mp3" type="audio/mpeg">
+            sonido no habilitado
+        </audio>
+
+        <script>
+            let elementoSegundo = document.getElementById("tiempoElegido");
+            let elementoTextoarlamra = document.getElementById("textoalarma");
+            let elementoSonidoAlarma = document.getElementById("audioAlarma");
+            let elementofecha = document.getElementById("fechas");
+
+
+
+
+            function comenzarTiempo(){
+                setTimeout(tiempocumplido, 1000 * elementoSegundo.value);
+            }
+            function tiempocumplido(){
+                
+                elementoTextoarlamra.style.color = "green";
+                elementoSonidoAlarma.play();
+            }
+
+            function comenzarReloj(){
+                setInterval(tictac, 1000);
+            }
+
+            function tictac(){
+                let tiempoActual = new Date();
+                let hora = tiempoActual.getHours();
+                let minutos = tiempoActual.getMinutes();
+                let segundos = String(tiempoActual.getSeconds()).padStart(2,0);
+
+                let dia = String(tiempoActual.getDay()).padStart(2,0);
+                let mes = String(tiempoActual.getMonth()).padStart(2,0);
+                let año = tiempoActual.getFullYear();
+                let fechiña = dia + "/" + mes + "/" + "/" + año;
+                elementofecha.textContent = fechiña
+        
+                
+
+                let textoHora = hora + ":" + minutos + ":" + segundos;
+                elementoTextoarlamra.textContent = textoHora;
+            }
+            
+            function mostrarFecha() {
+                var fecha = new Date();
+                alert(fecha.toLocaleDateString('es-ES'));
+            }
+        </script>
+    
+    </body>
+</html>

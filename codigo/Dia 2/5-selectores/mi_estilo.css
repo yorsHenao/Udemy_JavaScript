@@ -1,0 +1,22 @@
+ body{
+    background-color: bisque;
+ }
+
+ .principal{
+    font-family: 'Courier New', Courier, monospace;  
+ }
+
+ #informacion{
+    text-align: center;
+ }
+ a[href*=".edu"]{
+    background-color: gold;
+ }
+
+ h1:hover{
+    color: rgb(206, 132, 132);
+ }
+
+ .principal::first-line{
+    background-color: rgb(151, 156, 156);
+ }

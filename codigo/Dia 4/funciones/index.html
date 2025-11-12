@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Funciones</title>
+        <script> src</script>
+    </head>
+    <body>
+
+        <p>Primero Numero</p>
+        <input type="number" id="primerNumero">
+
+        <p>Segundo Numero</p>
+        <input type="number" id="SegundoNumero">
+        <br><br>
+        <button onclick="mostrarResultado()">Calcular</button>
+        <h2 id="textoResultado"></h2>
+
+
+
+
+        <script>
+            function sumar(){
+                 resultado = 2 + 3;
+                 return resultado;
+            }
+            let numero = "El numero es " + sumar();
+            alert(numero);
+        </script>
+
+        <script>
+            function sumaParametro(numero1, numero2){
+                let sumar = +numero1 + numero2;
+                return sumar;
+            }
+
+            function mostrarResultado(){
+                let elementoNumero1 = document.getElementById("primerNumero");
+                let elementoNumero2 = document.getElementById("SegundoNumero");
+                let elementoTexto = document.getElementById("textoResultado");
+                let elementosuma = sumaParametro(elementoNumero1.value, elementoNumero2.value);
+
+                elementoTexto.textContent = elementosuma;
+
+            }
+            
+        </script>
+    </body>
+</html>
