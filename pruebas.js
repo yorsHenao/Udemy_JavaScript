@@ -42,6 +42,7 @@ testLoop(2)
 
 testLoop(1) */
 
+/* 
 function testLoop (vueltas){
     let contador = 0;
     while (contador < vueltas){
@@ -59,3 +60,21 @@ function testin (parametro) {
     }
 } 
 testin(6)
+*/
+let miArray = [[2,4,5],[3,0,6],[9,4,7]];
+
+
+function testLoop() {
+    miEtiqueta:
+    for (let array of miArray){
+        for (let numero of array) {
+            console.log(numero);
+            if (numero === 0) {
+                break miEtiqueta;
+            } 
+            
+        } 
+    } 
+}
+
+testLoop()

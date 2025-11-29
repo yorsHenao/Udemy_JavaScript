@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <head>
+        <title>Etiquetas</title>
+    </head>
+    <body>
+       
+        <script>
+            //agregar etiquetas
+            miLoop: // etiqueta
+            /*
+            for(y = 1; y <= 10; y++){
+                if (y == 4){ 
+                    break miLoop;
+                } else {
+                document.write(y);
+                }
+            }
+                */
+         
+        </script>
+        <script>
+            let alto = 4;
+            let ancho = 3;
+
+            LoopExterno:
+            for (y = 1; y<= 4; y++){
+                for (x=1; x<= ancho; x++) {
+                    document.write(y + "." + x + "<br>");
+                    if (y ==2 && x == 2){
+                        break LoopExterno;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
